@@ -35,9 +35,8 @@ namespace PNGMask_Core
 
         public override void ImprintData(byte[] data)
         {
-            string pass = base.password;
-            if (pass != null && pass.Length > 0)
-                PrepareKey(Encoding.UTF8.GetBytes(pass));
+            if (base.password != null && base.password.Length > 0)
+                PrepareKey(Encoding.UTF8.GetBytes(base.password));
 
             for (int i = 0; i < data.Length; i++)
                 data[i] ^= key[i % key.Length];

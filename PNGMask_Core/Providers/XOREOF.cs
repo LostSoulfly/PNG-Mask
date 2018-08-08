@@ -11,17 +11,15 @@ namespace PNGMask_Core.Providers
         public XOREOF(string fvector, bool find = true) : base(fvector, find) { }
         public XOREOF(byte[] bvector, bool find = true) : base(bvector, find) { }
 
-        public XOREOF(PNG png, bool find = true, string password = "")
+        public XOREOF(PNG png, bool find = true)
         {
             image = png;
-            base.password = password;
             ProcessPNG(find);
         }
 
         public override void ProcessData(byte[] s, bool find = true)
         {
             base.ProcessData(s);
-
             ProcessPNG(find);
         }
 
@@ -52,6 +50,12 @@ namespace PNGMask_Core.Providers
         protected override void ImprintPNG(byte[] data)
         {
             image.Chunks.Add(new PNGChunk() { Name = "_EOF", Standard = false, Critical = false, CRC = 0, CRCBytes = new byte[4] { 0x00, 0x00, 0x00, 0x00 }, ValidCRC = false, Data = data });
+        }
+
+        public override void SetPassword(string password)
+        {
+            base.password = password;
+            ProcessPNG();
         }
     }
 }

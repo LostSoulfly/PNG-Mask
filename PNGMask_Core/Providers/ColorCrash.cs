@@ -16,7 +16,7 @@ namespace PNGMask_Core.Providers
 
         public override void ImprintData(byte[] data)
         {
-            string pass = "";
+            string pass = base.password;
             if (pass != null && pass.Length > 0)
                 csprng = SteganographyProvider.PrepareISAAC(Encoding.UTF8.GetBytes(pass));
 
@@ -69,7 +69,7 @@ namespace PNGMask_Core.Providers
 
         public override byte[] ExtractData()
         {
-            string pass = "";
+            string pass = base.password;
             if (pass != null && pass.Length > 0)
                 csprng = SteganographyProvider.PrepareISAAC(Encoding.UTF8.GetBytes(pass));
 
@@ -157,6 +157,11 @@ namespace PNGMask_Core.Providers
                 if (BitmapData[j] == 0) BitmapData[j] = 0x01;
                 j++;
             }
+        }
+
+        public override void SetPassword(string password)
+        {
+            base.password = password;
         }
     }
 }

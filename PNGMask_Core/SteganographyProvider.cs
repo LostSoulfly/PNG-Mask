@@ -11,32 +11,29 @@ namespace PNGMask_Core
         public SteganographyProvider() { }
         internal string password;
 
-        public SteganographyProvider(Stream svector, bool find = true, string password = "")
+        public SteganographyProvider(Stream svector, bool find = true)
         {
             if (svector.CanTimeout) throw new PNGMask_CoreException("Stream must not be able to time-out");
             if (!svector.CanRead) throw new PNGMask_CoreException("Stream must be readable");
             if (!svector.CanSeek) throw new PNGMask_CoreException("Stream must be seekable");
 
-            this.password = password;
 
             byte[] buffer = new byte[svector.Length];
             svector.Seek(0, SeekOrigin.Begin);
             if (svector.Read(buffer, 0, buffer.Length) != buffer.Length) throw new PNGMask_CoreException("Could not read entire stream");
             ProcessData(buffer, find);
         }
-        public SteganographyProvider(string fvector, bool find = true, string password = "")
+        public SteganographyProvider(string fvector, bool find = true)
         {
             if (!File.Exists(fvector)) throw new IOException("File '" + fvector + "' could not be found");
-            this.password = password;
             ProcessData(File.ReadAllBytes(fvector), find);
         }
 
-        public SteganographyProvider(byte[] bvector, bool find = true, string password = "") { this.password = password; ProcessData(bvector); }
+        public SteganographyProvider(byte[] bvector, bool find = true) { ProcessData(bvector, find); }
 
-        public SteganographyProvider(PNG pngvector, bool find = true, string password = "")
+        public SteganographyProvider(PNG pngvector, bool find = true)
         {
             byte[] data;
-            this.password = password;
             using (MemoryStream ms = new MemoryStream())
             {
                 pngvector.WriteToStream(ms);
@@ -44,6 +41,8 @@ namespace PNGMask_Core
             }
             ProcessData(data, find);
         }
+
+        public abstract void SetPassword(string password);
 
         public abstract void ProcessData(byte[] s, bool find = true);
         

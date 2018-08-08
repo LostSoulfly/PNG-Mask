@@ -11,10 +11,9 @@ namespace PNGMask_Core.Providers
         public XORIDAT(string fvector, bool find = true) : base(fvector, find) { }
         public XORIDAT(byte[] bvector, bool find = true) : base(bvector, find) { }
 
-        public XORIDAT(PNG png, bool find = true, string password = "")
+        public XORIDAT(PNG png, bool find = true)
         {
             image = png;
-            base.password = password;
             ProcessPNG(find);
         }
 
@@ -80,6 +79,12 @@ namespace PNGMask_Core.Providers
                 }
 
             image.Chunks.Insert(IEND, new PNGChunk() { Name = "IDAT", Standard = true, Critical = true, CRC = crc, CRCBytes = new byte[4] { crcb[3], crcb[2], crcb[1], crcb[0] }, ValidCRC = true, Data = data });
+        }
+
+        public override void SetPassword(string password)
+        {
+            base.password = password;
+            ProcessPNG();
         }
     }
 }

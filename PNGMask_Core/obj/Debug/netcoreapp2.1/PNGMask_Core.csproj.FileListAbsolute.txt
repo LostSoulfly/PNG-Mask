@@ -1,0 +1,18 @@
+C:\Users\Dragoon\Documents\visual studio 2017\Projects\PNGMask-Core\PNGMask_Core\obj\Debug\netcoreapp2.1\PNGMask_Core.csprojAssemblyReference.cache
+C:\Users\Dragoon\Documents\visual studio 2017\Projects\PNGMask-Core\PNGMask_Core\obj\Debug\netcoreapp2.1\PNGMask_Core.csproj.CoreCompileInputs.cache
+C:\Users\Dragoon\Documents\visual studio 2017\Projects\PNGMask-Core\PNGMask_Core\obj\Debug\netcoreapp2.1\PNGMask_Core.AssemblyInfoInputs.cache
+C:\Users\Dragoon\Documents\visual studio 2017\Projects\PNGMask-Core\PNGMask_Core\obj\Debug\netcoreapp2.1\PNGMask_Core.AssemblyInfo.cs
+C:\Users\Dragoon\Documents\visual studio 2017\Projects\PNGMask-Core\PNGMask_Core\bin\Debug\netcoreapp2.1\PNGMask_Core.deps.json
+C:\Users\Dragoon\Documents\visual studio 2017\Projects\PNGMask-Core\PNGMask_Core\bin\Debug\netcoreapp2.1\PNGMask_Core.dll
+C:\Users\Dragoon\Documents\visual studio 2017\Projects\PNGMask-Core\PNGMask_Core\bin\Debug\netcoreapp2.1\PNGMask_Core.pdb
+C:\Users\Dragoon\Documents\visual studio 2017\Projects\PNGMask-Core\PNGMask_Core\obj\Debug\netcoreapp2.1\PNGMask_Core.dll
+C:\Users\Dragoon\Documents\visual studio 2017\Projects\PNGMask-Core\PNGMask_Core\obj\Debug\netcoreapp2.1\PNGMask_Core.pdb
+C:\Users\Dragoon\Documents\GitHub\PNG-Mask\PNGMask_Core\bin\Debug\netcoreapp2.1\PNGMask_Core.deps.json
+C:\Users\Dragoon\Documents\GitHub\PNG-Mask\PNGMask_Core\bin\Debug\netcoreapp2.1\PNGMask_Core.dll
+C:\Users\Dragoon\Documents\GitHub\PNG-Mask\PNGMask_Core\bin\Debug\netcoreapp2.1\PNGMask_Core.pdb
+C:\Users\Dragoon\Documents\GitHub\PNG-Mask\PNGMask_Core\obj\Debug\netcoreapp2.1\PNGMask_Core.csprojAssemblyReference.cache
+C:\Users\Dragoon\Documents\GitHub\PNG-Mask\PNGMask_Core\obj\Debug\netcoreapp2.1\PNGMask_Core.csproj.CoreCompileInputs.cache
+C:\Users\Dragoon\Documents\GitHub\PNG-Mask\PNGMask_Core\obj\Debug\netcoreapp2.1\PNGMask_Core.AssemblyInfoInputs.cache
+C:\Users\Dragoon\Documents\GitHub\PNG-Mask\PNGMask_Core\obj\Debug\netcoreapp2.1\PNGMask_Core.AssemblyInfo.cs
+C:\Users\Dragoon\Documents\GitHub\PNG-Mask\PNGMask_Core\obj\Debug\netcoreapp2.1\PNGMask_Core.dll
+C:\Users\Dragoon\Documents\GitHub\PNG-Mask\PNGMask_Core\obj\Debug\netcoreapp2.1\PNGMask_Core.pdb

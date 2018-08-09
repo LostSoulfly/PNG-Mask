@@ -61,10 +61,10 @@ namespace PNGMask_Core.Providers
             image.Chunks.Insert(1, new PNGChunk() { Name = "tEXt", Standard = false, Critical = false, CRC = crc, CRCBytes = new byte[4] { crcb[3], crcb[2], crcb[1], crcb[0] }, ValidCRC = true, Data = data });
         }
 
-        public override void SetPassword(string password)
+        public override void SetPassword(string password, bool find = true)
         {
             base.password = password;
-            ProcessPNG();
+            ProcessPNG(find);
         }
     }
 }

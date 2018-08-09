@@ -42,7 +42,7 @@ namespace PNGMask_Core
             ProcessData(data, find);
         }
 
-        public abstract void SetPassword(string password);
+        public abstract void SetPassword(string password, bool find = true);
 
         public abstract void ProcessData(byte[] s, bool find = true);
         
@@ -52,6 +52,7 @@ namespace PNGMask_Core
         HEADER_IMG = { 0x49, 0x4D, 0x47 }, //Image
         HEADER_IDX = { 0x49, 0x44, 0x58 }, //Index
         HEADER_IDI = { 0x49, 0x44, 0x49 }, //Index - Image array (4b image length, < image data)
+        HEADER_FSS = { 0x46, 0x53, 0x53 }, //FileSystem
         HEADER_IDL = { 0x49, 0x44, 0x4C }; //Index - Link data array (4b image index, 4b title length, < title string, 4b URL length, < URL string)
 
         Random rnd = new Random();
@@ -73,6 +74,12 @@ namespace PNGMask_Core
                     data = Encoding.UTF8.GetBytes((string)obj);
                     temp.AddRange(BitConverter.GetBytes(data.Length));
                     temp.AddRange(HEADER_TXT);
+                    temp.AddRange(data);
+                    break;
+                case DataType.FileSystem:
+                    data = Encoding.UTF8.GetBytes((string)obj);
+                    temp.AddRange(BitConverter.GetBytes(data.Length));
+                    temp.AddRange(HEADER_FSS);
                     temp.AddRange(data);
                     break;
                 case DataType.Binary:
@@ -199,6 +206,9 @@ namespace PNGMask_Core
                 case "TXT":
                     data = Encoding.UTF8.GetString(ndata);
                     return DataType.Text;
+                case "FSS":
+                    data = Encoding.UTF8.GetString(ndata);
+                    return DataType.FileSystem;
                 case "BIN":
                     data = ndata;
                     return DataType.Binary;

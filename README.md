@@ -4,7 +4,7 @@
 
 PNG Mask is a steganography tool for Windows to hide data in PNG files.
 
-This is a fork that should work in .NET Core 2.1. License remains the same, of course.
+This is a fork that should work in .NET Core 2.1. Yes, this probably should have been done in .NET Standard. Oops.
 
 You have to use SetPassword after initializing a Provider. Everything else should work (probably).
 

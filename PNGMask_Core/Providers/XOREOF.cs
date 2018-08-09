@@ -52,10 +52,10 @@ namespace PNGMask_Core.Providers
             image.Chunks.Add(new PNGChunk() { Name = "_EOF", Standard = false, Critical = false, CRC = 0, CRCBytes = new byte[4] { 0x00, 0x00, 0x00, 0x00 }, ValidCRC = false, Data = data });
         }
 
-        public override void SetPassword(string password)
+        public override void SetPassword(string password, bool find = true)
         {
             base.password = password;
-            ProcessPNG();
+            ProcessPNG(find);
         }
     }
 }

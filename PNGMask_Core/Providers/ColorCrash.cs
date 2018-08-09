@@ -159,7 +159,7 @@ namespace PNGMask_Core.Providers
             }
         }
 
-        public override void SetPassword(string password)
+        public override void SetPassword(string password, bool find = false)
         {
             base.password = password;
         }
